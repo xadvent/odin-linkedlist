@@ -122,6 +122,21 @@ class LinkedList {
         newNode.next = temp;
         this.length++
     }
+
+    removeAt(index){
+        let currentNode = this.head;
+        while(index > 1){
+            currentNode = currentNode.next;
+            index--;
+        }
+        let temp = currentNode.next;
+        currentNode.next = temp.next;
+        this.length--;
+    }
 }
 
 const list = new LinkedList()
+
+for(let i = 0; i < 10; i++){
+    list.append(i);
+}
